@@ -1,0 +1,25 @@
+CREATE DATABASE registro;
+USE registro;
+CREATE TABLE administrador(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+nombres VARCHAR(40) NOT NULL, 
+apellidos VARCHAR(45) NOT NULL, 
+fechaD DATETIME DEFAULT CURRENT_TIMESTAMP, 
+encargado VARCHAR(255) NOT NULL, 
+telefono INT (10) NOT NULL,
+contraseña VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE profesores(
+id INT(10) AUTO_INCREMENT PRIMARY KEY,
+nombres VARCHAR(40) NOT NULL, 
+apellidos VARCHAR(40) NOT NULL, 
+email VARCHAR(45) NOT NULL, 
+fechaD DATETIME DEFAULT CURRENT_TIMESTAMP, 
+telefono INT(10) NOT NULL, 
+asig varchar (50) NOT NULL,
+contraseña VARCHAR(255) NOT NULL
+);
+
+SELECT * FROM administrador;
+SELECT * FROM profesores;
