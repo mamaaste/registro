@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['nombres']) || !isset($_SESSION['id'])) {
+    header('location: index.html');
+}
+echo "administrador ". $_SESSION['nombres'];
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -50,16 +59,16 @@
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item ">
-                  <a class="nav-link" href="login.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="login.php">inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="maestro.php"> registro de maestros </a>
+                  <a class="nav-link" href="regisp.php"> registro de maestros </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="regiNA.php"> registro de alumnos </a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="service.html"> Services </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="regisCUR.php">registro de cursos </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="cerrar.php">Login</a>
@@ -76,110 +85,51 @@
     <!-- end header section -->
   </div>
 
-  <!-- service section -->
+  <!-- contact section -->
 
-  <section class="service_section layout_padding">
-    <div class="container">
-      <div class="custom_heading-container">
-        <h3 class=" ">
-          OUR SERVICES
-        </h3>
-      </div>
-      <p class="">
-        ad minim veniam, quis nostrud exercitation ullamco
-      </p>
-      <div class="service_container ">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="box b-1">
-              <div class="img-box">
-                <img src="images/s-1.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Tab Services
-                </h6>
-                <p>
-                  adipiscing elit, sed do eiusmod tempor incididunt
-                </p>
-                <div class="btn-box">
-                  <a href="">
-                    Read More
-                  </a>
-                  <hr>
-                </div>
-              </div>
+  <section class="contact_section layout_padding">
+    <div class="custom_heading-container">
+      <h3 class=" ">
+        Booking Online
+      </h3>
+    </div>
+    <div class="container layout_padding2-top">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <form action="">
+            <div>
+              <input type="text" placeholder="NAME">
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box b-2">
-              <div class="img-box">
-                <img src="images/s-2.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Pipe Water
-                </h6>
-                <p>
-                  adipiscing elit, sed do eiusmod tempor incididunt
-                </p>
-                <div class="btn-box">
-                  <a href="">
-                    Read More
-                  </a>
-                  <hr>
-                </div>
-              </div>
+            <div>
+              <input type="email" placeholder="EMAIL">
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box b-3">
-              <div class="img-box">
-                <img src="images/s-3.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Washing Machine
-                </h6>
-                <p>
-                  adipiscing elit, sed do eiusmod tempor incididunt
-                </p>
-                <div class="btn-box">
-                  <a href="">
-                    Read More
-                  </a>
-                  <hr>
-                </div>
-              </div>
+            <div>
+              <input type="text" placeholder="PHONE NUMBER">
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box b-4">
-              <div class="img-box">
-                <img src="images/s-4.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Hand Washing
-                </h6>
-                <p>
-                  adipiscing elit, sed do eiusmod tempor incididunt
-                </p>
-                <div class="btn-box">
-                  <a href="">
-                    Read More
-                  </a>
-                  <hr>
-                </div>
-              </div>
+            <div>
+              <select name="" id="">
+                <option value="" disabled selected>TYPE OF SERVICE</option>
+                <option value="">Service 1</option>
+                <option value="">Service 2</option>
+                <option value="">Service 3</option>
+              </select>
             </div>
-          </div>
+            <div>
+              <input type="text" class="message-box" placeholder="MESSAGE">
+            </div>
+            <div class="d-flex justify-content-center ">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- end service section -->
+  <!-- end contact section -->
 
   <!-- info section -->
   <section class="info_section layout_padding">

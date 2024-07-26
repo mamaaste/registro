@@ -35,6 +35,8 @@ echo "administrador ". $_SESSION['nombres'];
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -64,10 +66,10 @@ echo "administrador ". $_SESSION['nombres'];
                   <a class="nav-link" href="regisp.php"> registros de maestros </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Services </a>
+                  <a class="nav-link" href="regiNA.php"> registro de alumnos </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="regisCUR.php">ver cursos </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="cerrar.php">Login</a>
@@ -214,32 +216,24 @@ populares, y la circulación acumulada de 1 ~ 23 volúmenes ha superado los
 
     <!-- about section -->
     <section class="about_section layout_padding">
-      <div class="container">
-        <div class="custom_heading-container">
-          <h3 class=" ">
-            ABOUT OUR COMPANY
-          </h3>
+    <div class="container mt-5">
+    <h1>Agregar Publicación</h1>
+    <form action="publicacion.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
         </div>
-        <p class="layout_padding2-top">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        </p>
-        <div class="img-box layout_padding2">
-          <img src="images/about-img.jpg" alt="">
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="5" required></textarea>
         </div>
-        <p class="layout_padding2-bottom">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        </p>
-      </div>
-      <div class="container">
-        <div class="btn-box">
-          <a href="">
-            Read More
-          </a>
-          <hr>
+        <div class="form-group">
+            <label for="imagen">Imagen (5x5 cm)</label>
+            <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/*" required>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary">Agregar Publicación</button>
+    </form>
+    </div>
     </section>
 
 
@@ -631,7 +625,9 @@ populares, y la circulación acumulada de 1 ~ 23 volúmenes ha superado los
       </p>
     </section>
     <!-- footer section -->
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

@@ -2,10 +2,9 @@
 session_start();
 if (!isset($_SESSION['nombres']) || !isset($_SESSION['id'])) {
     header('location: index.html');
-    exit();
 }
-echo "Administrador " . $_SESSION['nombres'];
-?>
+echo "administrador ". $_SESSION['nombres'];
+?> 
 
 
 <!DOCTYPE html>
@@ -37,7 +36,6 @@ echo "Administrador " . $_SESSION['nombres'];
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,12 +59,12 @@ echo "Administrador " . $_SESSION['nombres'];
             <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item ">
-                  <a class="nav-link" href="login.php">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="regisp.php"> registros de maestros </a>
+                  <a class="nav-link" href="login.php">inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="regisP.php"> registro de maestros </a>
+                </li>
+                <li class="nav-item active">
                   <a class="nav-link" href="regiNA.php"> registro de alumnos </a>
                 </li>
                 <li class="nav-item">
@@ -87,74 +85,68 @@ echo "Administrador " . $_SESSION['nombres'];
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
+  <!-- service section -->
   <section class="contact_section layout_padding">
     <div class="custom_heading-container">
-      <h3 class=" ">
-        REGISTRAR MAESTROS 
-      </h3>
+        <h3 class="">
+            REGISTRAR ALUMNOS
+        </h3>
     </div>
     <div class="container layout_padding2-top">
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-        <form action="registroP.php" method="post">
-                        <div class="form-group">
-                            <label for="nombre">Nombres</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="apellido">Apellidos</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="fechaD">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="fechaD" name="fechaD">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de Teléfono">
-                        </div>
-                        <div class="form-group">
-                            <label for="asig">Asignatura</label>
-                            <select class="form-control" id="asig" name="asig">
-                           
-                <option value="asig" disabled selected>guia de grado </option>
-                <option value="PRIMERO ">PRIMERO PRIMARIA </option>
-                <option value="SEGUNDO">SEGUNDO PRIMARIA</option>
-                <option value="TERCERO">TERCERO PRIMARIA </option>
-                <option value="CUARTO">CUARTO PRIMARIA </option>
-                <option value="QUINTO">QUINTO PRIMARIA </option>
-                <option value="SEXTO">SEXTO PRIMARIA </option>
-                <option value="AUXILIAR">AUXILIAR  </option>
-                <option value="DIRECTOR">DIRECTOR  </option>
-                <option value="ADMINISTRADOR">ADMINISTRADOR </option>
-              
-              
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="contraseña">Contraseña</label>
-                            <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Registrar</button>
-                    </form>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form action="registroA.php" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombres</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellidos</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaD">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaD" name="fechaD" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de Teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="grado">Grado</label>
+                        <select class="form-control" id="grado" name="grado" required>
+                            <option value="" disabled selected>Seleccione un grado</option>
+                            <option value="PRIMERO">PRIMERO PRIMARIA</option>
+                            <option value="SEGUNDO">SEGUNDO PRIMARIA</option>
+                            <option value="TERCERO">TERCERO PRIMARIA</option>
+                            <option value="CUARTO">CUARTO PRIMARIA</option>
+                            <option value="QUINTO">QUINTO PRIMARIA</option>
+                            <option value="SEXTO">SEXTO PRIMARIA</option>
+                            <option value="NO ASIGNADO">NO ASIGNADO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
         </div>
-      </div>
-
-    </div>
+    
 
     <script>
         document.getElementById('registroForm').addEventListener('submit', function(event) {
             let valid = true;
-            const fields = ['nombre', 'apellido', 'email', 'fechaD', 'telefono', 'asig', 'contraseña'];
+            const fields = ['nombre', 'apellido', 'email', 'fechaD', 'telefono', 'grado', 'contraseña'];
             fields.forEach(function(field) {
                 const input = document.getElementById(field);
                 const errorDiv = document.getElementById('error-' + field);
-                if (input.value.trim() === '') {
+                if (input && input.value.trim() === '' && field !== 'apellido') { // Campo 'apellido' no es obligatorio
                     errorDiv.textContent = 'Este campo es obligatorio';
                     valid = false;
                 } else {
@@ -166,22 +158,17 @@ echo "Administrador " . $_SESSION['nombres'];
             }
         });
     </script>
+   </section>
 
 
-  </section>
-  <!-- end about section -->
-  <section class="about_section layout_padding">
 
-  <?php
-// Incluir el archivo de conexión
-include 'conexcion1.php';
-
-
-// Inicializar la variable de resultado
-$result = null;
+   <section class="about_section layout_padding">
+   
+   <?php
+include "conexcion1.php";
 
 // Consultar la base de datos
-$sql = "SELECT id, nombre, apellido, email, fechaD, telefono, asig FROM profesores";
+$sql = "SELECT id, nombre, apellido, email, fechaD, telefono, grado FROM alumnos";
 if ($result = $conn->query($sql)) {
     // La consulta fue exitosa
 } else {
@@ -190,66 +177,55 @@ if ($result = $conn->query($sql)) {
 }
 ?>
 
-  <h3 class=" ">
-        MAESTROS  
-      </h3>
 
-
-  <div class="container layout_padding2-top">
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-dark table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Email</th>
-                                <th>Fecha de Registro</th>
-                                <th>Teléfono</th>
-                                <th>Asignatura</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if ($result->num_rows > 0): ?>
-                                <?php while($row = $result->fetch_assoc()): ?>
-                                    <tr>
-                                        <td><?php echo $row["id"]; ?></td>
-                                        <td><?php echo $row["nombre"]; ?></td>
-                                        <td><?php echo $row["apellido"]; ?></td>
-                                        <td><?php echo $row["email"]; ?></td>
-                                        <td><?php echo $row["fechaD"]; ?></td>
-                                        <td><?php echo $row["telefono"]; ?></td>
-                                        <td><?php echo $row["asig"]; ?></td>
-                                        <td>
-                                            <!-- Botón de Editar -->
-                                            <a href="editar.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
-                                            <!-- Botón de Borrar -->
-                                            <form action="eliminar.php" method="post" style="display:inline;">
-                                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                            <input type="hidden" name="tipo" value="profesor">
-                                            <button type="submit" class="btn btn-danger">Borrar</button>
-                                            </form>
-
-
-                                            
-                                        </td>
-                                    </tr>
-                                <?php endwhile; ?>
-                            <?php else: ?>
+    <div class="container layout_padding2-top">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Fecha de Registro</th>
+                            <th>Teléfono</th>
+                            <th>Grado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if ($result->num_rows > 0): ?>
+                            <?php while($row = $result->fetch_assoc()): ?>
                                 <tr>
-                                    <td colspan="8">No se encontraron resultados</td>
+                                    <td><?php echo $row["id"]; ?></td>
+                                    <td><?php echo $row["nombre"]; ?></td>
+                                    <td><?php echo $row["apellido"]; ?></td>
+                                    <td><?php echo $row["email"]; ?></td>
+                                    <td><?php echo $row["fechaD"]; ?></td>
+                                    <td><?php echo $row["telefono"]; ?></td>
+                                    <td><?php echo $row["grado"]; ?></td>
+                                    <td>
+                                    <!-- Botón de Editar -->
+                                    <a href="editarA.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
+                                    <!-- Botón de Borrar -->
+                                    <form action="eliminarA.php" method="post" style="display:inline;">
+                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" class="btn btn-danger">Borrar</button>
+                                    </form>
+                                </td>
                                 </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">No se encontraron resultados</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-  
+    </div>
 
- 
 
 
     <!-- Incluir Bootstrap JS y dependencias -->
@@ -268,6 +244,15 @@ if ($result = $conn->query($sql)) {
       </div>
     </section>
 
+
+
+
+
+</section>
+
+
+
+  <!-- end service section -->
 
   <!-- info section -->
   <section class="info_section layout_padding">
@@ -395,6 +380,8 @@ if ($result = $conn->query($sql)) {
     </div>
   </section>
 
+
+
   <!-- end info_section -->
 
   <!-- footer section -->
@@ -408,11 +395,6 @@ if ($result = $conn->query($sql)) {
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
-
 </html>
-<?php $conn->close(); ?>
